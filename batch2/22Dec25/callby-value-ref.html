@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = 100;
+        function inc(x) {
+            x++;
+            console.log(x);
+        }
+        inc(100)//call by value
+        inc(a)//call by value
+
+        function incArray(br) {
+            for (var i = 0; i <= br.length - 1; i++) {
+                br[i]++
+            }
+        }
+        var ar = [10, 20, 30]
+        incArray(ar)//call by reference
+        console.log(ar);
+    </script>
+</body>
+
+</html>

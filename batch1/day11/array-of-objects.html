@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const products = [
+            { title: "Wireless Headphones", price: 129.99, discount: 15, category: "Electronics" },
+            { title: "Hardcover Notebook", price: 19.5, discount: 5, category: "Sports" },
+            { title: "Cotton T-Shirt", price: 25.0, discount: 10, category: "Clothing" },
+            { title: "Ceramic Mug Set", price: 34.75, discount: 20, category: "Home" },
+            { title: "Yoga Mat", price: 45.0, discount: 12, category: "Sports" },
+            { title: "Fitness Tracker", price: 89.99, discount: 10, category: "Electronics" },
+            { title: "Running Shoes", price: 120.0, discount: 25, category: "Clothing" },
+            { title: "Bluetooth Speaker", price: 59.99, discount: 18, category: "Electronics" },
+            { title: "Stainless Steel Water Bottle", price: 29.95, discount: 5, category: "Home" },
+            { title: "LED Desk Lamp", price: 39.5, discount: 15, category: "Home" },
+            { title: "Organic Face Cream", price: 24.99, discount: 8, category: "Beauty" },
+            { title: "Children's Puzzle Toy", price: 14.5, discount: 20, category: "Toys" },
+            { title: "Hardcover Cookbook", price: 27.0, discount: 10, category: "Books" },
+            { title: "Camping Hammock", price: 49.99, discount: 30, category: "Outdoors" }
+        ];
+
+        var xyz = products.filter(function (p) {
+            if (p.title === 'Yoga Mat') {
+                return true
+            }
+        })
+        console.log(xyz);
+        console.log(xyz[0].price);
+
+        var prod = products.find(function (p) {
+            if (p.title === 'Yoga Mat') {
+                return true
+            }
+        })
+        console.log(prod);
+        console.log(prod.price);
+        // var ar = [10, 20, 19];
+        // var br = ['fathima', 'hina', 'joy']
+        // var students = [
+        //     {
+        //         fullname: "Uday",
+        //         age: 18,
+        //         likes: "cricket"
+        //     },
+        //     {
+        //         fullname: "Praveen",
+        //         age: 15,
+        //         likes: "deepika padukone"
+        //     },
+        //     {
+        //         fullname: "Chitra",
+        //         age: 17,
+        //         likes: "Biryani"
+        //     },
+        //     {
+        //         fullname: "Susmitha",
+        //         age: 19,
+        //         likes: "Reading Books"
+        //     }
+        // ]
+
+        // students = students.map(function (s) {
+        //     s.minority = s.age >= 18 ? false : true
+        //     return s
+        // })
+        // console.log(students);
+
+        // students[0].fullname = students[0].fullname.toUpperCase();
+
+        // students = students.map(function (s) {
+        //     s.fullname = s.fullname.toUpperCase()
+        //     return s
+        // })
+
+        // console.log(students);
+
+        // console.log(students[1].likes);
+        // console.log(students[3].likes);
+
+        // var likings = students.map(function (a) {
+        //     return a.likes
+        // })
+        // console.log(likings);
+
+
+    </script>
+</body>
+
+</html>

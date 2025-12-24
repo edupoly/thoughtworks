@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function abcd(a,b,c) {//
+        //     var i = 18;
+        //     i++;
+        //     console.log(i);
+        // }
+
+        // abcd(10,34,28)//
+
+        function add(a, b, c, d) {
+            // console.log(arguments);
+            var sum = 0
+            for (var i = 0; i <= arguments.length - 1; i++) {
+                sum += arguments[i]
+            }
+            return sum
+        }
+
+        var k = add(10, 48, 56, 89)
+        console.log(k);
+
+        var p = add(10, 20)
+        console.log(p);
+        //overloading in a different way
+    </script>
+</body>
+
+</html>

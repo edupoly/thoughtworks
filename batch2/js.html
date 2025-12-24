@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>10+20</h1>
+    <input type="text">
+    <br>
+    <button>Show in A-Z</button>
+    <ul>
+        <li>Ameer</li>
+        <li>Jyotsnavi</li>
+        <li>Shiva Kumar</li>
+        <li>Abdul</li>
+        <li>Akshara</li>
+        <li>Seetha</li>
+        <li>Harshitha</li>
+    </ul>
+    <button onclick="sort()">Sort cheyyara</button>
+    <ul id="d1">
+
+    </ul>
+    <script>
+
+        var students = ['thamanna', 'srileela', 'vijay', 'kazal', 'deepika', 'rambai', 'alia']
+
+        function genUI() {
+            document.getElementById("d1").innerHTML = ""
+            for (var i = 0; i <= students.length - 1; i++) {
+                var nli = document.createElement("li")
+                nli.innerText = students[i]
+                document.getElementById("d1").appendChild(nli)
+            }
+        }
+        genUI();
+        function sort() {
+            students.sort();
+            genUI()
+        }
+    </script>
+</body>
+
+</html>
+<!-- 
+    evaluation of expressisons
+    input validation
+    dynamic UI generation
+    control on UI(webpage)
+    communication with server in backgorund()
+-->
