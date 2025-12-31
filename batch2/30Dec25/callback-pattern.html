@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function div(a, b, cfn) {
+            if (isNaN(a) || isNaN(b)) {
+                cfn("babu input sarigga ledu", null)
+            }
+            else {
+                cfn(null, a / b)
+            }
+        }
+
+        div("three", 2, function (err, res) {
+            if (err) { console.log(err); }
+            else { console.log(res); }
+        })
+
+        function add(a, b, cb) {
+            cb(a + b)
+        }
+
+    </script>
+</body>
+
+</html>

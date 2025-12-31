@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var br = [13, 25, 28]
+
+        var ar = [];
+        var cr = [];
+
+        for (let i = 1; i <= 3; i++) {
+            ar.push(function () { console.log(i); })
+        }
+        console.log(ar);
+
+        // for (let j = 0; j <= br.length - 1; j++) {
+        //     cr.push(function () { console.log("Balaji"); })
+        // }
+        // console.log(cr);
+
+        br.forEach(function (a, k) {
+            var h = 'ritu'
+            cr.push(function () { console.log(k, a, h); })
+        })
+        // console.log(k);
+        console.log(cr);
+        cr[1]();
+    </script>
+</body>
+
+</html>

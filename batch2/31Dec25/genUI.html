@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #d1 {
+            display: flex;
+            flex-wrap: wrap;
+            ;
+        }
+
+        #d1 li {
+            list-style: none;
+            border: 1px solid gray;
+            margin: 10px;
+            padding: 10px;
+            width: 300px;
+        }
+
+        .hero {
+            background-color: lightblue;
+        }
+
+        .heroine {
+            background-color: lightpink;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="d1">
+
+    </ul>
+    <script>
+        const actors = [
+            { name: "Mahesh Babu", firstmovie: "Rajakumarudu", placeofbirth: "Chennai, Tamil Nadu", gender: "Male" },
+            { name: "Anushka Shetty", firstmovie: "Super", placeofbirth: "Mangalore, Karnataka", gender: "Female" },
+            { name: "Prabhas", firstmovie: "Eeswar", placeofbirth: "Bhimavaram, Andhra Pradesh", gender: "Male" },
+            { name: "Vijay Deverakonda", firstmovie: "Nuvvila", placeofbirth: "Achampet, Telangana", gender: "Male" },
+            { name: "Samantha Ruth Prabhu", firstmovie: "Ye Maaya Chesave", placeofbirth: "Alappuzha, Kerala", gender: "Female" },
+            { name: "Tamannaah Bhatia", firstmovie: "Chand Sa Roshan Chehra", placeofbirth: "Mumbai, Maharashtra", gender: "Female" },
+            { name: "Ram Charan", firstmovie: "Chirutha", placeofbirth: "Chennai, Tamil Nadu", gender: "Male" },
+            { name: "Nayanthara", firstmovie: "Manassinakkare", placeofbirth: "Bengaluru, Karnataka", gender: "Female" },
+            { name: "Ileana D'Cruz", firstmovie: "Devadasu", placeofbirth: "Mumbai, Maharashtra", gender: "Female" },
+            { name: "Trisha Krishnan", firstmovie: "Mounam Pesiyadhe", placeofbirth: "Chennai, Tamil Nadu", gender: "Female" },
+            { name: "Genelia D'Souza", firstmovie: "Tujhe Meri Kasam", placeofbirth: "Mumbai, Maharashtra", gender: "Female" },
+            { name: "Shruti Haasan", firstmovie: "Hey Ram", placeofbirth: "Chennai, Tamil Nadu", gender: "Female" },
+            { name: "Rakul Preet Singh", firstmovie: "Gilli", placeofbirth: "New Delhi, Delhi", gender: "Female" },
+            { name: "Pooja Hegde", firstmovie: "Mugamoodi", placeofbirth: "Mumbai, Maharashtra", gender: "Female" },
+            { name: "Allu Arjun", firstmovie: "Gangotri", placeofbirth: "Chennai, Tamil Nadu", gender: "Male" },
+            { name: "Jr. NTR", firstmovie: "Ninnu Choodalani", placeofbirth: "Hyderabad, Telangana", gender: "Male" },
+            { name: "Sreeleela", firstmovie: "Kiss", placeofbirth: "Detroit, Michigan, USA", gender: "Female" },
+            { name: "Sai Pallavi", firstmovie: "Kasthuri Maan", placeofbirth: "Kotagiri, Tamil Nadu", gender: "Female" },
+            { name: "Keerthy Suresh", firstmovie: "Kuberan", placeofbirth: "Chennai, Tamil Nadu", gender: "Female" },
+            { name: "Nithya Menen", firstmovie: "The Legend of Kaliyug", placeofbirth: "Bengaluru, Karnataka", gender: "Female" },
+            { name: "Kajal Aggarwal", firstmovie: "Lakshmi Kalyanam", placeofbirth: "Mumbai, Maharashtra", gender: "Female" },
+            { name: "Rashmika Mandanna", firstmovie: "Kirik Party", placeofbirth: "Virajpet, Karnataka", gender: "Female" }
+        ];
+        for (var i = 0; i <= actors.length - 1; i++) {
+            var nli = document.createElement("li")
+
+            var nh1 = document.createElement("h1")
+            nh1.innerText = actors[i].name;
+
+            var nh2 = document.createElement("h2")
+            nh2.innerText = actors[i].firstmovie
+
+            var nh3 = document.createElement("h3")
+            nh3.innerText = actors[i].placeofbirth
+
+            if (actors[i].gender === 'Male') {
+                nli.classList.add('hero')
+            }
+            if (actors[i].gender === 'Female') {
+                nli.classList.add('heroine')
+            }
+
+            nli.appendChild(nh1);
+            nli.appendChild(nh2);
+            nli.appendChild(nh3);
+
+            document.getElementById("d1").appendChild(nli)
+        }
+    </script>
+</body>
+
+</html>

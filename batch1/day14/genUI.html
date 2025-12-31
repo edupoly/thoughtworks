@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #d1 {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #d1 li {
+            list-style: none;
+
+        }
+
+        .heroes {
+            border: 2px solid rgb(141, 173, 242);
+            margin: 10px;
+            padding: 10px;
+            width: 300px;
+            background-color: lightblue;
+        }
+
+        .heroines {
+            border: 2px solid rgb(245, 174, 174);
+            margin: 10px;
+            padding: 10px;
+            width: 300px;
+            background-color: lightpink;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="d1">
+
+    </ul>
+    <script>
+        const actors = [
+            { name: "Mahesh Babu", firstmovie: "Rajakumarudu", placeofbirth: "Chennai, Tamil Nadu", gender: "Male" },
+            { name: "Anushka Shetty", firstmovie: "Super", placeofbirth: "Mangalore, Karnataka" },
+            { name: "Prabhas", firstmovie: "Eeswar", placeofbirth: "Bhimavaram, Andhra Pradesh", gender: "Male" },
+            { name: "Vijay Deverakonda", firstmovie: "Nuvvila", placeofbirth: "Achampet, Telangana", gender: "Male" },
+            { name: "Samantha Ruth Prabhu", firstmovie: "Ye Maaya Chesave", placeofbirth: "Alappuzha, Kerala" },
+            { name: "Tamannaah Bhatia", firstmovie: "Chand Sa Roshan Chehra", placeofbirth: "Mumbai, Maharashtra" },
+            { name: "Ram Charan", firstmovie: "Chirutha", placeofbirth: "Chennai, Tamil Nadu", gender: "Male" },
+            { name: "Nayanthara", firstmovie: "Manassinakkare", placeofbirth: "Bengaluru, Karnataka" },
+            { name: "Ileana D'Cruz", firstmovie: "Devadasu", placeofbirth: "Mumbai, Maharashtra" },
+            { name: "Trisha Krishnan", firstmovie: "Mounam Pesiyadhe", placeofbirth: "Chennai, Tamil Nadu" },
+            { name: "Genelia D'Souza", firstmovie: "Tujhe Meri Kasam", placeofbirth: "Mumbai, Maharashtra" },
+            { name: "Shruti Haasan", firstmovie: "Hey Ram", placeofbirth: "Chennai, Tamil Nadu" },
+            { name: "Rakul Preet Singh", firstmovie: "Gilli", placeofbirth: "New Delhi, Delhi" },
+            { name: "Pooja Hegde", firstmovie: "Mugamoodi", placeofbirth: "Mumbai, Maharashtra" },
+            { name: "Allu Arjun", firstmovie: "Gangotri", placeofbirth: "Chennai, Tamil Nadu", gender: "Male" },
+            { name: "Jr. NTR", firstmovie: "Ninnu Choodalani", placeofbirth: "Hyderabad, Telangana", gender: "Male" },
+            { name: "Sreeleela", firstmovie: "Kiss", placeofbirth: "Detroit, Michigan, USA" },
+            { name: "Sai Pallavi", firstmovie: "Kasthuri Maan", placeofbirth: "Kotagiri, Tamil Nadu" },
+            { name: "Keerthy Suresh", firstmovie: "Kuberan", placeofbirth: "Chennai, Tamil Nadu" },
+            { name: "Nithya Menen", firstmovie: "The Legend of Kaliyug", placeofbirth: "Bengaluru, Karnataka" },
+            { name: "Kajal Aggarwal", firstmovie: "Lakshmi Kalyanam", placeofbirth: "Mumbai, Maharashtra" },
+            { name: "Rashmika Mandanna", firstmovie: "Kirik Party", placeofbirth: "Virajpet, Karnataka" }
+        ];
+        for (var i = 0; i <= actors.length - 1; i++) {
+            var nli = document.createElement("li")
+
+            var hname = document.createElement("h1")
+            hname.innerText = actors[i].name
+
+            var hfm = document.createElement("h2")
+            hfm.innerText = actors[i].firstmovie
+
+            var pob = document.createElement("h3")
+            pob.innerText = actors[i].placeofbirth
+
+            nli.appendChild(hname)
+            nli.appendChild(hfm)
+            nli.appendChild(pob)
+            if (actors[i].gender === 'Male') {
+                nli.classList.add('heroes')
+            }
+            else {
+                nli.classList.add('heroines')
+            }
+            document.getElementById("d1").appendChild(nli)
+        }
+    </script>
+</body>
+
+</html>

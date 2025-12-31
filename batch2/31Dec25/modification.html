@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .xyz {
+            border: 2px solid red;
+            padding: 10px;
+        }
+
+        .pqr {
+            font-family: arial;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="abc">This is a main heading</h1>
+    <p>This is a paragraph of text. It can contain various information.</p>
+    <p>Here is another paragraph, providing more details under the subheading.</p>
+    <h1 id="d1">Some content</h1>
+    <h2>This is a subheading</h2>
+    <p>And a third paragraph to demonstrate multiple sections.</p>
+    <h2 class="abc">Another subheading</h2>
+    <h1>Idi inko h1</h1>
+    <script>
+        // var x = document.getElementById("d1")
+        // x.style.color = "red"
+
+        var y = document.querySelectorAll("h1")
+        console.log(y);
+        for (var i = 0; i <= y.length - 1; i++) {
+            y[i].style.color = 'red'
+            y[i].style.backgroundColor = "lightblue"
+            y[i].classList.add("xyz", "pqr")
+            // y[i].classList.add("pqr")
+        }
+    </script>
+</body>
+
+</html>

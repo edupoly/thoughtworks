@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function abc() {
+            var i = 100;
+            return function () {
+                i = i + 10;
+                console.log(i);
+            }
+        }
+
+        var x = abc();
+        console.dir(x)
+        x()
+        // x()
+
+        // var ar = [10, 42, 23]
+        // var br = []
+        // var cr = []
+
+        // // for (let i = 0; i <= ar.length - 1; i++) {
+        // //     setTimeout(function () {
+        // //         console.log("Hello Deepika", i);
+        // //     }, 1000)
+        // // }
+
+        // ar.forEach(function(a,j){
+        //      setTimeout(function () {
+        //         console.log("Hello Deepika", j);
+        //     }, 1000)
+        // })
+
+
+        // if (true) {
+        //     let k = 19;
+        //     // var j = 99;
+        //     function abc() {
+        //         console.log(k);
+        //     }
+        // }
+        // console.dir(abc);
+        // function abc() {
+        //     console.log(k);
+        // }
+        // console.log(j);
+
+        // for (var i = 0; i <= ar.length - 1; i++) {
+        //     br.push(function () { console.log(ar[i]); })
+        // }
+
+        // ar.forEach(function (a, j) {
+        //     cr.push(function () { console.log(a + j); })
+        // })
+
+        // console.log(br);
+        // console.log(cr);
+
+        // cr[1]()
+
+    </script>
+</body>
+
+</html>
+<!-- 
+    1. global scope
+    2. block scope
+    3. closure scope
+-->

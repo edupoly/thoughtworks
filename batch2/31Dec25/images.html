@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="" id="d1" alt="">
+    <script>
+
+        var thumbnails = [
+            "https://cdn.dummyjson.com/product-images/beauty/eyeshadow-palette-with-mirror/thumbnail.webp",
+            "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/thumbnail.webp",
+            "https://cdn.dummyjson.com/product-images/beauty/powder-canister/thumbnail.webp",
+            "https://cdn.dummyjson.com/product-images/beauty/red-lipstick/thumbnail.webp"
+        ]
+        var x = document.getElementById("d1")
+        var i = 0;
+        var t1 = setInterval(function () {
+            x.src = thumbnails[i];
+            i++;
+            if (i == thumbnails.length) {
+                i = 0;
+            }
+        }, 2000)
+
+    </script>
+</body>
+
+</html>

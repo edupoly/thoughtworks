@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function div(a, b) {
+            if (isNaN(a) || isNaN(b) || b == 0) {
+                return Promise.reject("Thammudu chusko")
+            }
+            else {
+                return Promise.resolve(a / b)
+            }
+        }
+        var x = +prompt()
+        var y = +prompt()
+        div(x, y)
+            .then(function (res) { console.log(res); })
+            .catch(function (err) { alert(err); })
+    </script>
+</body>
+
+</html>

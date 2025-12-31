@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #d1 {
+            border: 2px solid;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to my page!</h1>
+    <p>This is a simple paragraph demonstrating some HTML elements.</p>
+    <h2>About Us</h2>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <a href="https://www.example.com">Visit Example.com</a>
+    <div id="d1">
+
+    </div>
+    <ul id="d2">
+
+    </ul>
+
+    <!-- <img src="https://via.placeholder.com/150" alt="Placeholder Image"> -->
+    <script>
+        var k = document.createElement("h1")
+        k.innerText = "Welcome to Assalu Javascript"
+        document.getElementById("d1").appendChild(k)
+        console.log(k);
+
+        var nli = document.createElement("li")
+        nli.innerText = "Anushka"
+        console.log(nli);
+
+        document.getElementById("d2").appendChild(nli)
+
+        var actors = ["Prabhas", "Mahesh Babu", "Allu Arjun", "Ram Charan", "Jr NTR", "Vijay", "Ajith", "Suriya"];
+        for (var i = 0; i <= actors.length - 1; i++) {
+            var nli = document.createElement("li")
+            nli.innerText = actors[i]
+            document.getElementById('d2').appendChild(nli)
+        }
+    </script>
+</body>
+
+</html>
+<!-- 
+DOM
+    1. element generation
+-->

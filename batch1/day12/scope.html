@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var x = 100;//global scope
+        console.log(x);
+        // console.log(b);
+        console.log(y);
+        var y = 400;
+    </script>
+    <script>//hoisting specific to the script tag
+        var b = 200;//global scope//script scope
+        console.log(x);
+    </script>
+    <script>
+        console.log(b);
+    </script>
+</body>
+
+</html>
+<!-- 
+    1. global scope
+
+-->
