@@ -13,7 +13,11 @@
     </ul>
     <script>
         var students = ["Aparana", 'Seetha', "Mahesh", "Gopasri"]
-
+        for (var i = 0; i <= students.length - 1; i++) {
+            var nli = document.createElement("li")
+            nli.innerText = students[i]
+            document.getElementById("d1").appendChild(nli)
+        }
 
     </script>
 </body>
