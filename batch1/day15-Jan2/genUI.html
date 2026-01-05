@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        tr:hover {
+            background-color: rgb(206, 211, 213);
+        }
+    </style>
+</head>
+
+<body>
+    <table border="2px">
+        <thead>
+            <tr>
+                <th onclick="abcd('name')">Name</th>
+                <th onclick="abcd('firstmovie')">First Movie</th>
+                <th onclick="abcd('placeofbirth')">Place of Birth</th>
+            </tr>
+        </thead>
+        <tbody id="mytable">
+
+        </tbody>
+    </table>
+    <script>
+        const actors = [
+            { name: "Mahesh Babu", firstmovie: "Rajakumarudu", placeofbirth: "Chennai, Tamil Nadu", gender: "Male" },
+            { name: "Anushka Shetty", firstmovie: "Super", placeofbirth: "Mangalore, Karnataka", gender: "Female" },
+            { name: "Prabhas", firstmovie: "Eeswar", placeofbirth: "Bhimavaram, Andhra Pradesh", gender: "Male" },
+            { name: "Vijay Deverakonda", firstmovie: "Nuvvila", placeofbirth: "Achampet, Telangana", gender: "Male" },
+            { name: "Samantha Ruth Prabhu", firstmovie: "Ye Maaya Chesave", placeofbirth: "Alappuzha, Kerala", gender: "Female" },
+            { name: "Tamannaah Bhatia", firstmovie: "Chand Sa Roshan Chehra", placeofbirth: "Mumbai, Maharashtra", gender: "Female" },
+            { name: "Ram Charan", firstmovie: "Chirutha", placeofbirth: "Chennai, Tamil Nadu", gender: "Male" },
+            { name: "Nayanthara", firstmovie: "Manassinakkare", placeofbirth: "Bengaluru, Karnataka", gender: "Female" },
+            { name: "Ileana D'Cruz", firstmovie: "Devadasu", placeofbirth: "Mumbai, Maharashtra", gender: "Female" },
+            { name: "Trisha Krishnan", firstmovie: "Mounam Pesiyadhe", placeofbirth: "Chennai, Tamil Nadu", gender: "Female" },
+            { name: "Genelia D'Souza", firstmovie: "Tujhe Meri Kasam", placeofbirth: "Mumbai, Maharashtra", gender: "Female" },
+            { name: "Shruti Haasan", firstmovie: "Hey Ram", placeofbirth: "Chennai, Tamil Nadu", gender: "Female" },
+            { name: "Rakul Preet Singh", firstmovie: "Gilli", placeofbirth: "New Delhi, Delhi", gender: "Female" },
+            { name: "Pooja Hegde", firstmovie: "Mugamoodi", placeofbirth: "Mumbai, Maharashtra", gender: "Female" },
+            { name: "Allu Arjun", firstmovie: "Gangotri", placeofbirth: "Chennai, Tamil Nadu", gender: "Male" },
+            { name: "Jr. NTR", firstmovie: "Ninnu Choodalani", placeofbirth: "Hyderabad, Telangana", gender: "Male" },
+            { name: "Sreeleela", firstmovie: "Kiss", placeofbirth: "Detroit, Michigan, USA", gender: "Female" },
+            { name: "Sai Pallavi", firstmovie: "Kasthuri Maan", placeofbirth: "Kotagiri, Tamil Nadu", gender: "Female" },
+            { name: "Keerthy Suresh", firstmovie: "Kuberan", placeofbirth: "Chennai, Tamil Nadu", gender: "Female" },
+            { name: "Nithya Menen", firstmovie: "The Legend of Kaliyug", placeofbirth: "Bengaluru, Karnataka", gender: "Female" },
+            { name: "Kajal Aggarwal", firstmovie: "Lakshmi Kalyanam", placeofbirth: "Mumbai, Maharashtra", gender: "Female" },
+            { name: "Rashmika Mandanna", firstmovie: "Kirik Party", placeofbirth: "Virajpet, Karnataka", gender: "Female" }
+        ];
+
+        function genTable() {
+            actors.forEach(function (actor) {
+                var ntr = document.createElement("tr")
+                var nametd = document.createElement("td")
+                nametd.innerText = actor.name
+                var fmtd = document.createElement("td")
+                fmtd.innerText = actor.firstmovie;
+                var pbtd = document.createElement("td")
+                pbtd.innerText = actor.placeofbirth;
+                ntr.appendChild(nametd)
+                ntr.appendChild(fmtd)
+                ntr.appendChild(pbtd)
+                console.log(ntr);
+                document.querySelector("#mytable").appendChild(ntr)
+            })
+        }
+
+        genTable();
+
+        function abcd(k) {
+            //data sorted
+            actors.sort(function (a1, a2) {
+                if (a1[k] > a2[k]) { return 1 }
+                else { return -1 }
+            })
+            //clearing tbody
+            document.getElementById("mytable").innerHTML = ""
+
+            //generate rows again and append
+            genTable();
+        }
+    </script>
+</body>
+
+</html>

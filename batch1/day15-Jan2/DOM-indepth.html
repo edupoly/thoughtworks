@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 class="abc">This is a main heading</h1>
+    <p>This is a paragraph of text. It can contain various information.</p>
+    <p>Here is another paragraph, providing more details under the subheading.</p>
+    <h1>Some content</h1>
+    <h2>This is a subheading</h2>
+    <p>And a third paragraph to demonstrate multiple sections.</p>
+    <h2 class="abc">Another subheading</h2>
+    <h1>Idi inko h1</h1>
+    <script>
+        var k = document.getElementsByTagName("h1")
+        console.log(k);
+        var q = document.querySelectorAll("h1")
+        console.log(q);
+
+        for (var i = 0; i <= k.length - 1; i++) {
+            k[i].style.color = "red"
+        }
+
+        q.forEach(function (element) {
+            element.style.backgroundColor = "lightblue"
+        })//traversal
+
+        var gc = document.getElementsByClassName("abc")
+        console.log(gc);
+
+        // var ar = [10, 20, 30]
+        // console.log(ar);
+    </script>
+</body>
+
+</html>
+<!-- 
+    1.document based element creation(UI generate)
+    2. document element selection
+-->

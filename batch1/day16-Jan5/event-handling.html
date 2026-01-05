@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 onclick="sayit(event)">Hello Praveen</h1>
+    <input type="text" id="d1" onkeyup="xyz(event)">
+    <h1 id="d2"></h1>
+    <script>
+        function sayit(ev) {
+            console.log('hi ra')
+            console.log("How are you");
+            console.log("good to ses you");
+            console.log(ev);
+        }
+        function xyz(ev) {
+            document.getElementById("d2").innerText = ev.target.value
+        }
+    </script>
+</body>
+
+</html>
