@@ -83,9 +83,14 @@
             ntd.innerText = student.name;
             ntr.appendChild(ntd)
 
-            var mtd = document.createElement("td")
-            mtd.innerText = student.marks[0].mark;
-            ntr.appendChild(mtd)
+            student.marks.forEach(function (m) {
+                var mtd = document.createElement("td")
+                mtd.innerText = m.mark;
+                ntr.appendChild(mtd)
+            })
+
+
+
             document.getElementById("d2").appendChild(ntr)
         })
     </script>
