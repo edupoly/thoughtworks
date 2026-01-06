@@ -8,12 +8,25 @@
 </head>
 
 <body>
+    <img src="" id="d1" alt="">
     <script>
         const images = ["https://i.pinimg.com/1200x/90/54/de/9054de59924360eb7ac55e1271b1838a.jpg",
             "https://i.pinimg.com/1200x/32/81/bd/3281bd8ffcd7366370711eb698a7af7b.jpg",
             "https://i.pinimg.com/1200x/2f/e7/24/2fe7249e793d0f6b3bea6b63c2f70042.jpg",
             "https://i.pinimg.com/1200x/fa/2d/a1/fa2da151d3b24c9334952178e364501b.jpg"
         ]
+        var i = 0
+        var x = document.getElementById("d1")
+        x.src = images[i]
+        x.style.width = "300px"
+
+        setInterval(function () {
+            i++;
+            x.src = images[i]
+            if (i === images.length - 1) {
+                i = -1;
+            }
+        }, 1000)
     </script>
 </body>
 
