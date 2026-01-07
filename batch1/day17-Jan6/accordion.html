@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="d1">
+
+    </ul>
+    <script>
+        const quotes = [
+            {
+                quote: "The only way to do great work is to love what you do.",
+                explanation: "This quote by Steve Jobs emphasizes the importance of passion in achieving excellence in one's work."
+            },
+            {
+                quote: "Innovation distinguishes between a leader and a follower.",
+                explanation: "Another quote from Steve Jobs, highlighting the critical role of innovation in leadership and market differentiation."
+            },
+            {
+                quote: "Stay hungry, stay foolish.",
+                explanation: "A famous line from Steve Jobs' Stanford commencement speech, encouraging continuous learning and unconventional thinking."
+            },
+            {
+                quote: "Your time is limited, don't waste it living someone else's life.",
+                explanation: "This quote, also by Steve Jobs, advises individuals to pursue their own paths and not conform to others' expectations."
+            },
+            {
+                quote: "The future belongs to those who believe in the beauty of their dreams.",
+                explanation: "Eleanor Roosevelt's quote inspires hope and the pursuit of aspirations."
+            },
+            {
+                quote: "Strive not to be a success, but rather to be of value.",
+                explanation: "Albert Einstein's advice focuses on contributing meaningfully rather than just achieving personal success."
+            },
+            {
+                quote: "The only impossible journey is the one you never begin.",
+                explanation: "Tony Robbins encourages taking the first step towards any goal, no matter how daunting."
+            }
+        ];
+        quotes.forEach(function (q) {
+            var nli = document.createElement("li")
+
+            var qh1 = document.createElement('h1')
+            qh1.innerText = q.quote;
+            qh1.addEventListener("click", function (ev) {
+
+                document.querySelectorAll("p").forEach(function (el) {
+                    el.style.display = "none"
+                })
+
+                if (ev.target.nextElementSibling.style.display === "block") {
+                    ev.target.nextElementSibling.style.display = "none"
+                }
+                else {
+                    ev.target.nextElementSibling.style.display = "block"
+                }
+            })
+            var epara = document.createElement("p")
+            epara.innerText = q.explanation;
+
+            nli.appendChild(qh1)
+            nli.appendChild(epara)
+
+            document.getElementById("d1").appendChild(nli)
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hello Divya</h1>
+    <ul>
+        <li>Apple </li>
+        <li>Mango </li>
+        <li>Orange </li>
+    </ul>
+    <script>
+
+        var ar = []
+
+        var k = document.getElementsByTagName("li")
+        console.log(k);
+        for (var i = 0; i <= k.length - 1; i++) {
+            console.log(k[i].innerText);
+        }
+
+        var p = document.querySelectorAll("li")
+        p.forEach(function (el) {
+            console.log(el.innerText);
+        })
+        // var x = document.getElementsByTagName("h1")
+        // console.log(x[0].innerText)
+        // console.log(typeof x[0].innerText)
+        // console.log(x[0].innerText.toUpperCase())
+        // x[0].innerHTML = "Welcome to Edupoly"
+    </script>
+</body>
+
+</html>

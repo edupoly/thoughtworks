@@ -60,9 +60,12 @@
                 fmtd.innerText = actor.firstmovie;
                 var pbtd = document.createElement("td")
                 pbtd.innerText = actor.placeofbirth;
+                var gtd = document.createElement("td")
+                gtd.innerText = actor.gender;
                 ntr.appendChild(nametd)
                 ntr.appendChild(fmtd)
                 ntr.appendChild(pbtd)
+                ntr.appendChild(gtd)
                 console.log(ntr);
                 document.querySelector("#mytable").appendChild(ntr)
             })
