@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="d1">
+
+    </ul>
+    <script>
+        fetch("https://dummyjson.com/products?limit=50&&skip=50")
+            .then(function (res) { return res.json() })
+            .then(function (data) {
+                genUI(data.products);
+            })
+        console.log("Hello");
+        function genUI(products) {
+            products.forEach(function (product) {
+                var nli = document.createElement('li')
+                nli.innerText = product.title
+                document.getElementById("d1").appendChild(nli)
+            })
+        }
+    </script>
+</body>
+
+</html>
