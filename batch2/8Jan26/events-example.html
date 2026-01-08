@@ -8,6 +8,21 @@
 </head>
 
 <body>
+    <table border="2">
+        <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th onclick="sortEmployees('age')">Age</th>
+                <th>Gender</th>
+                <th>City</th>
+                <th onclick="sortEmployees('salary')">Salary</th>
+            </tr>
+        </thead>
+        <tbody id="d1">
+
+        </tbody>
+    </table>
     <script>
         const employees = [
             {
@@ -75,6 +90,48 @@
                 salary: 78000
             }
         ];
+
+        function genUI() {
+            document.getElementById("d1").innerHTML = ""
+            employees.forEach(function (emp) {
+                var ntr = document.createElement("tr")
+
+                var fntd = document.createElement("td")
+                fntd.innerText = emp.firstname
+                ntr.appendChild(fntd);
+
+                var lntd = document.createElement("td")
+                lntd.innerText = emp.lastname
+                ntr.appendChild(lntd);
+
+                var agetd = document.createElement("td")
+                agetd.innerText = emp.age
+                ntr.appendChild(agetd);
+
+                var gendertd = document.createElement("td")
+                gendertd.innerText = emp.gender
+                ntr.appendChild(gendertd);
+
+                var citytd = document.createElement("td")
+                citytd.innerText = emp.city
+                ntr.appendChild(citytd);
+
+                var salarytd = document.createElement("td")
+                salarytd.innerText = emp.salary
+                ntr.appendChild(salarytd);
+
+                document.getElementById("d1").appendChild(ntr)
+            })
+        }
+        genUI()
+        function sortEmployees(k) {
+            employees.sort(function (e1, e2) {
+                if (e1[k] < e2[k]) { return -1 }
+                else { return 1 }
+            })
+            genUI();
+
+        }
     </script>
 </body>
 
