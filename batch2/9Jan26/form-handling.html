@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form onsubmit="show(event)">
+        <h3>Firstname:</h3>
+        <input type="text" name="firstname" id="fn">
+        <h3>Lastname:</h3>
+        <input type="text" name="lastname" id="ln">
+        <h3>Gender:</h3>
+        <input type="radio" name="gen" value="Female">:Female
+        <input type="radio" name="gen" value="Male">:Male
+        <input type="radio" name="gen" value="Others">:Others
+        <br>
+        <h3>Technologies:</h3>
+        <input type="checkbox" name="tech" value="js">:Javascript
+        <input type="checkbox" name="tech" value="rjs">:ReactJS
+        <input type="checkbox" name="tech" value="ts">:Typescript
+        <input type="checkbox" name="tech" value="njs">:NodeJS
+        <input type="checkbox" name="tech" value="ajs">:ANgular
+        <input type="checkbox" name="tech" value="ejs">:ExpressJS
+        <input type="checkbox" name="tech" value="mdb">:MongoDB
+        <br>
+
+        <button>Show Details</button>
+    </form>
+    <script>
+        var details = {
+            firstname: "",
+            lastname: "",
+            gender: "",
+            techs: []
+        }
+        function show(ev) {
+            console.log(ev);
+            ev.preventDefault();
+            details.firstname = document.getElementById("fn").value
+            details.lastname = document.getElementById("ln").value
+
+            // var x = document.querySelectorAll("input[name='tech']")
+            var x = document.getElementsByName("gen")
+            console.log(x);
+            x.forEach(function (el) {
+                if (el.checked) {
+                    details.gender = el.value;
+                }
+            })
+            var x = document.getElementsByName("tech")
+            console.log(x);
+            x.forEach(function (el) {
+                if (el.checked) {
+                    details.techs.push(el.value);
+                }
+            })
+            console.log(details);
+        }
+
+    </script>
+</body>
+
+</html>

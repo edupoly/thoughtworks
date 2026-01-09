@@ -10,6 +10,7 @@
 <body>
     <h1>Count:<span id="d1"></span></h1>
     <button onclick="incCounter()">Increment</button>
+    <button onclick="decCounter()">Increment</button>
     <script>
         var c = 0;
         document.getElementById("d1").innerText = c;
@@ -19,6 +20,8 @@
         }
         function decCounter() {
             c--;
+            document.getElementById("d1").innerText = c;
+
         }
     </script>
 </body>
