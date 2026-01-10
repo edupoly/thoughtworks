@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/rxjs@7.8.2/dist/bundles/rxjs.umd.min.js"></script>
+</head>
+
+<body>
+    <h1 id="d2"></h1>
+    <table border="2">
+        <tbody id="d1"></tbody>
+    </table>
+    <!-- <button onclick="nextset()">Next</button> -->
+    <button id="btn1">Next</button>
+    <script>
+        var s = 0;
+        function genTable(products) {
+            document.getElementById("d1").innerText = ""
+            products.forEach(function (product) {
+                var ntr = document.createElement("tr")
+                var titletd = document.createElement("td")
+                titletd.innerText = product.title
+                var categorytd = document.createElement("td")
+                categorytd.innerText = product.category
+                ntr.appendChild(titletd)
+                ntr.appendChild(categorytd)
+                document.getElementById("d1").appendChild(ntr)
+            })
+        }
+
+        // function getProducts() {
+        //     var http = new XMLHttpRequest()
+        //     http.open("GET", "https://dummyjson.com/product?limit=10&skip=" + s, true)
+        //     http.send()
+        //     console.log(http.response);
+        //     http.onreadystatechange = function () {
+        //         if (http.readyState == 4) {
+        //             var products = JSON.parse(http.response).products;
+        //             genTable(products)
+        //         }
+        //     }
+        // }
+
+        // function getProducts() {
+        //     fetch("https://dummyjson.com/product?limit=10&skip=" + s)
+        //         .then(function (res) { return res.json() })
+        //         .then(function (data) { console.log(data.products) })
+        //     console.log("HI");
+        // }
+
+        function getProducts() {
+            console.log(rxjs);
+            rxjs.ajax.ajax.get("https://dummyjson.com/product?limit=10&skip=" + s)
+                .subscribe(function (res) { genTable(res.response.products); })
+            console.log("HI");
+        }
+        // function getProducts() {
+        //     axios.get("https://dummyjson.com/product?limit=10&skip=" + s)
+        //         .then(function (res) { console.log(res.data); })
+        //     console.log("HI");
+        // }
+
+        function nextset() {
+            s = s + 10;
+            getProducts();
+        }
+        rxjs.fromEvent(document.getElementById("btn1"), "click")
+            .pipe(
+                rxjs.throttleTime(4000)
+            )
+            .subscribe(
+                function () {
+                    nextset()
+                }
+            )
+
+        getProducts()
+        // http.onloadend = function () {
+        //     console.log(http.response);
+        // }
+
+        // console.log(http.readyState);
+        // console.dir(http)
+        // http.onreadystatechange = function () {
+        //     if (http.readyState === 1) {
+        //         document.getElementById("d1").innerText = "request sent"
+        //     }
+        //     if (http.readyState === 2) {
+        //         document.getElementById("d1").innerText = "request accepted"
+        //     }
+        //     if (http.readyState === 3) {
+        //         document.getElementById("d1").innerText = "Loading...."
+        //     }
+        //     if (http.readyState === 4) {
+        //         document.getElementById("d1").innerText = "Ipoindira chusko"
+        //     }
+        // }
+
+
+        // http.onload = function () {
+        //     // alert("Load Vachindi ramana")
+        //     document.getElementById("d1").innerText = "Loadinguuu.."
+        // }
+        // http.onloadend = function () {
+        //     // alert("Load Ethali ramana")
+        //     document.getElementById("d1").innerText = "Over.."
+
+        // }
+    </script>
+</body>
+
+</html>
