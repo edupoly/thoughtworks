@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="http://neestam.com" method="post">
+        <label for="d1">Enter Your Name:</label>
+        <input id="d1" type="text" name="fullname">
+        <br>
+        <label for="d2">Enter Your Email:</label>
+        <input id="d3" type="email" name="fullname">
+        <br>
+        <label for="d3">Enter Your Pincode:</label>
+        <input id="d3" type="number" name="pincode" max="999999" min="100000">
+        <br>
+        <label>Enter Your Password</label>
+        <input type="password" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+        <br>
+        <label>Enter Your Date of Birth</label>
+        <input type="date" name="pwd" min="2025-08-11" required>
+        <br>
+
+        <input type="radio" name="gen" value="male">:Male
+        <input type="radio" name="gen" value="female">:Female
+        <input type="radio" name="gen" value="others">:Others
+        <br>
+        <input type="checkbox" value="NodeJS">NodeJS
+        <input type="checkbox" value="Angular" checked>Angular
+        <input type="checkbox" value="ReactJS">ReactJS
+        <br>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <br>
+        <select name="country" id="">
+            <option value="null" disabled selected>Please select</option>
+            <option value="IND">India</option>
+            <option value="PAK">Pakistan</option>
+            <option value="SRI">Srilanka</option>
+        </select>
+        <br>
+        <button>Emito</button>
+    </form>
+</body>
+
+</html>
