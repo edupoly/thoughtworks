@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0px;
+        }
+
+        #navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: lightgray;
+            padding: 5px;
+
+        }
+
+        #menubar {
+            display: flex;
+            list-style: none;
+        }
+
+        #menubar li {
+            padding-left: 10px;
+        }
+
+        #hamburger,
+        #toggle-menu {
+            display: none;
+        }
+
+        @media screen and (max-width:768px) {
+            #menubar {
+                display: none;
+                width: 100%;
+                position: absolute;
+                top: 80px;
+                background-color: lightgray;
+            }
+
+            #hamburger {
+                display: flex;
+            }
+
+            #toggle-menu:checked~#menubar {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+        <h1 class="logo">Edupoly</h1>
+
+        <input type="checkbox" id="toggle-menu">
+        <label for="toggle-menu">
+            <h1 id="hamburger">&#9776;</h1>
+        </label>
+        <ul id="menubar">
+            <li>Home</li>
+            <li>Aboutus</li>
+            <li>Contact</li>
+            <li>Services</li>
+        </ul>
+
+    </div>
+</body>
+
+</html>
