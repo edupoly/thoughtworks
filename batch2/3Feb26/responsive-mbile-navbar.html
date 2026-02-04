@@ -36,11 +36,15 @@
 
         @media screen and (max-width:768px) {
             #menubar {
-                display: none;
+                top: 0px;
+                left: 0px;
                 width: 100%;
                 position: absolute;
-                top: 80px;
+                margin-top: 90px;
                 background-color: lightgray;
+                background-color: black;
+                color: white;
+                height: 0px;
             }
 
             #hamburger {
@@ -50,6 +54,8 @@
             #toggle-menu:checked~#menubar {
                 display: flex;
                 flex-direction: column;
+                transition: 2s;
+                height: 10%;
             }
         }
     </style>

@@ -6,13 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        #d1,
+        #d2 {
+            display: none;
+        }
 
+        #d2:checked~#d1 {
+            display: block;
+        }
     </style>
 </head>
 
 <body>
     <input type="checkbox" id="d2">
+    <label for="d2">
+        <span>&#9776;</span>
+    </label>
     <h1 id="d1">Hello Checkbox you are on</h1>
+
 </body>
 
 </html>
