@@ -5,21 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
     <style>
-        h1 {
+        .abc {
             /* display: none; */
             height: 0px;
             overflow: hidden;
+            width: 0%;
         }
 
         #d1 {
             display: none;
         }
 
-        #d1:checked~h1 {
+        #d1:checked~.abc {
             display: block;
-            transition: 5s;
+            transition: 1s;
             height: 100px;
+            width: 50%;
             background-color: lightcoral;
         }
     </style>
@@ -27,8 +31,8 @@
 
 <body>
     <input type="checkbox" id="d1">
-    <label for="d1">&#9776;</label>
-    <h1>Hello Praveen</h1>
+    <h1><label for="d1">Toggle</label></h1>
+    <h1 class="abc">Hello Praveen</h1>
 </body>
 
 </html>

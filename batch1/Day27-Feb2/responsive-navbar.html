@@ -22,7 +22,7 @@
             width: 150px;
         }
 
-        ul {
+        #menubar {
             padding: 0px;
             margin: 0px;
             position: sticky;
@@ -51,13 +51,20 @@
             display: none;
         }
 
+        #toggle-menu-checkbox {
+            display: none;
+        }
+
         @media screen and (max-width:800px) {
             #navbar {
                 justify-content: space-between;
             }
 
-            ul {
+            #menubar {
                 display: none;
+                width: 0px;
+                transition-duration: 3s;
+                transition-property: width;
             }
 
             .bi-list {
@@ -66,6 +73,18 @@
                 padding: 10px;
                 color: white;
             }
+
+            #toggle-menu-checkbox:checked~#menubar {
+                display: block;
+                position: absolute;
+                text-align: center;
+                top: 60px;
+                right: 0px;
+                background-color: lightcoral;
+                width: 400px;
+                transition: 2s;
+            }
+
         }
     </style>
 </head>
@@ -73,14 +92,16 @@
 <body>
     <div id="navbar">
         <img src="https://edupoly.in/assets/fullstack-training-hyderabad.png" alt="">
-        <ul>
+
+        <input type="checkbox" id="toggle-menu-checkbox">
+        <label for="toggle-menu-checkbox"><i class="bi bi-list"></i></label>
+        <ul id="menubar">
             <li>Home</li>
             <li>Aboutus</li>
             <li>Contactus</li>
             <li>Service</li>
             <li>Login</li>
         </ul>
-        <i class="bi bi-list"></i>
     </div>
     <h1>Hello Divya</h1>
     <h1>Hello Karthik</h1>

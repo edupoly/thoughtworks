@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            border: 4px solid red;
+            padding: 5px;
+            display: grid;
+        }
+
+        .gitem {
+            border: 3px solid blue;
+            border-radius: 5px;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        .header {
+            grid-column-start: 1;
+            grid-column-end: 6;
+        }
+
+        .r1-content {
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+
+        .r1-extra {
+            grid-column-start: 4;
+            grid-column-end: 5;
+        }
+
+        .sidebar {
+            grid-column-start: 5;
+            grid-column-end: 6;
+            grid-row-start: 2;
+            grid-row-end: 7;
+        }
+
+        .r2-content {
+            grid-column-start: 1;
+            grid-column-end: 2;
+        }
+
+        .r2-extra {
+            grid-column-start: 2;
+            grid-column-end: 5;
+        }
+
+        .r3-content {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+
+        .r3-extra {
+            grid-column-start: 3;
+            grid-column-end: 5;
+        }
+
+        .r4-content {
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+
+        .r4-extra {
+            grid-column-start: 4;
+            grid-column-end: 5;
+        }
+
+        .footer {
+            grid-column-start: 1;
+            grid-column-end: 5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="gitem header">Header</div>
+        <div class="gitem r1-content">R1 Content</div>
+        <div class="gitem r1-extra">R1 Extra</div>
+        <div class="gitem sidebar">Sidebar</div>
+        <div class="gitem r2-content">R2 Content</div>
+        <div class="gitem r2-extra">R2 Extra</div>
+        <div class="gitem r3-content">R3 Content</div>
+        <div class="gitem r3-extra">R3 Extra</div>
+        <div class="gitem r4-content">R4 Content</div>
+        <div class="gitem r4-extra">R4 Extra</div>
+        <div class="gitem footer">Footer</div>
+    </div>
+</body>
+
+</html>
