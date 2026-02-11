@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function add(a, b, cb) {
+            cb(a + b)
+        }
+
+        function facto(n, cb) {
+            setTimeout(function () {
+                var f = 1;
+                for (var i = n; i >= 1; i--) {
+                    f = f * i
+                }
+                cb(f)
+            }, 1)
+        }
+        function sub(a, b, cb) {
+            cb(a - b)
+        }
+
+        function mul(a, b) {
+            return Promise.resolve(a * b)
+        }
+
+        mul(20, 5).then(function (res) { console.log("multiplication:", res); })
+
+        add(10, 20, function (res) { console.log(res); })
+
+        facto(5, function (res) { console.log("facto", res); })
+
+        sub(89, 23, function (res) { console.log(res); })
+
+        // function addSeries(a, b, cf) {
+        //     setTimeout(function () {
+        //         let sum = 0
+        //         for (var i = a; i <= b; i++) {
+        //             sum += i;
+        //         }
+        //         cf(sum);
+        //     }, 1)
+        // }
+        // addSeries(1, 3000000000, function (res) { console.log(res); });
+        // console.log('hi');
+    </script>
+</body>
+
+</html>

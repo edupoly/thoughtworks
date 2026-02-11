@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        async function addSer(a, b) {
+            var p = new Promise(function (resolve, rej) {
+                setTimeout(function () {
+                    let sum = 0;
+                    for (var i = a; i <= b; i++) {
+                        sum += i;
+                    }
+                    resolve(sum)
+                }, 1)
+            })
+            return p
+        }
+        async function addSeriesPromise(a, b) {
+            var result = await addSer(a, b)
+            return result;
+        }
+
+        addSeriesPromise(1, 3000000000).then(function (res) { console.log(res); })
+
+        console.log("hi");
+
+    </script>
+</body>
+
+</html>

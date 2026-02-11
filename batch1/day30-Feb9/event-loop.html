@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/rxjs@^7/dist/bundles/rxjs.umd.min.js"></script>
+</head>
+
+<body>
+    <button id="btn1">Prudvi</button>
+    <h1>Hello Sai</h1>
+    <script>
+
+        // observable pattern
+        
+        var ob1 = rxjs.fromEvent(document.getElementById("btn1"), "click")
+
+        ob1.subscribe(function () { console.log("Ela undi idi"); })
+
+
+        // document.getElementById("btn1").addEventListener("click", function () {
+        //     console.log('Hello click');
+        // })
+
+        // console.log("first line");
+        // setTimeout(function () { console.log("second line"); }, 6000)
+        // console.log("third line");
+        // console.log("fourth line");
+        // setTimeout(function () { console.log("fifth line"); }, 2000)
+        // console.log("sixth line");
+
+        // setTimeout(function () { console.log("firstline"); }, 2000)
+        // setTimeout(function () { console.log("secondline"); }, 6000)
+        // setTimeout(function () { console.log("thirdline"); }, 2000)
+
+
+    </script>
+</body>
+
+</html>
