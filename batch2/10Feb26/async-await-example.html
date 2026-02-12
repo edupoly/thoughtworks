@@ -11,13 +11,13 @@
     <script>
         async function addSer(a, b) {
             var p = new Promise(function (resolve, rej) {
-                setTimeout(function () {
-                    let sum = 0;
-                    for (var i = a; i <= b; i++) {
-                        sum += i;
-                    }
-                    resolve(sum)
-                }, 1)
+
+                let sum = 0;
+                for (var i = a; i <= b; i++) {
+                    sum += i;
+                }
+                resolve(sum)
+
             })
             return p
         }

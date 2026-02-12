@@ -24,13 +24,13 @@
 
         function addSeriesPromise(a, b) {
             var p = new Promise(function (resolve, reject) {
-                setTimeout(function () {
-                    let sum = 0;
-                    for (var i = a; i <= b; i++) {
-                        sum += i;
-                    }
-                    resolve(sum)
-                }, 1)
+
+                let sum = 0;
+                for (var i = a; i <= b; i++) {
+                    sum += i;
+                }
+                resolve(sum)
+
             })
             return p
         }
