@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var ar = [10, 18, 12, 19, 14]
+        // // var a = ar[0]
+        // // var b = ar[1]
+        // // var c = ar[2]
+
+        // var [a, b, ...c] = ar
+        // console.log(c);
+
+        var employee = {
+            firstname: "Praveen",
+            lastname: "gubbala",
+            age: 32,
+            place: "Hyderabad",
+            gender: "Male"
+        }
+
+        // delete employee.age;
+        var { age, ...employee } = employee
+        console.log(employee);
+
+
+        // var ob = { ...employee }
+        // ob.age = 31;
+        // console.log(ob);
+        // console.log(employee);
+    </script>
+</body>
+
+</html>

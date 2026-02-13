@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="worker.js"></script>
+    <script>
+        function addSeriesWorker(a, b) {
+            var p = new Promise((resolve, reject) => {
+                var webworker = new Worker("worker.js")
+                webworker.postMessage({ a, b })
+                webworker.onmessage = function (e) {
+                    console.log("data::", e)
+                    resolve(e.data)
+                }
+            })
+            return p
+        }
+        addSeriesWorker(10, 300000000).then((res) => console.log(res))
+        console.log("HI");
+    </script>
+</body>
+
+</html>
