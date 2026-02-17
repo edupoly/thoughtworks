@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="newtodolist()">New Todolist</button>
+    <ul id="todolist">
+
+    </ul>
+    <script>
+        class Todolist {
+            todos = [];
+            title = "";
+            constructor(t) {
+                this.title = t;
+                var nli = document.createElement("li")
+                nli.innerText = this.title
+                document.getElementById("todolist").appendChild(nli)
+            }
+            addTodo = function (todo) {
+                this.todos.push(todo);
+            };
+            deleteTodo = function (id) {
+                this.todos.splice(id, 1);
+            }
+        }
+
+        function newtodolist() {
+            var title = prompt("Enter the title")
+            var ntdolist = new Todolist(title)
+        }
+    </script>
+</body>
+
+</html>
