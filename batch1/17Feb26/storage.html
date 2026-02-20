@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log(window.localStorage.count);
+        console.log(window.localStorage.getItem("count"));
+        window.localStorage.setItem("sreeleela", "kurchi")
+        window.localStorage.removeItem("sreeleela")
+        window.localStorage.setItem("count", 9)
+        var ar = [10, 20, 30]
+        window.localStorage.setItem("myarr", ar)
+        window.localStorage.setItem("yourarr", JSON.stringify(ar))
+        window.localStorage.setItem("edoarr", ar.toString())
+        var br = {
+            firstname: "himaja",
+            lastname: "singh"
+        }
+        window.localStorage.setItem("obj", br)
+        window.localStorage.setItem("obj2", JSON.stringify(br))
+
+        var dr = [10, 20]
+        var fr = [30, 40]
+        // console.log(dr + fr);
+        console.log(dr.concat(fr).toString());
+        console.log(JSON.stringify(dr.concat(fr)));
+    </script>
+</body>
+
+</html>
