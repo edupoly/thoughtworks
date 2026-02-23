@@ -5,6 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #d2 {
+            background-color: cyan;
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            margin: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -17,6 +26,12 @@
         <button>Add Todo</button>
     </form>
     <h1>All Todos</h1>
+    <a href="https://dummyjson.com/products">Vasthuvulu Thechuko Po</a>
+    <div id="d2">
+        <form action="https://dummyjson.com/products" onsubmit="showProducts()">
+            <button>Products Thechuko</button>
+        </form>
+    </div>
     <ul id="todos"></ul>
     <script>
         function getAllTodos() {
