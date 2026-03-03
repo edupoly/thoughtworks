@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form onsubmit="addTodo(event)">
+        <input type="text" name="title" id="ntitle" placeholder="title">
+        <br>
+        <input type="text" name="status" id="nstatus" placeholder="status">
+        <br>
+        <button>Add Todo</button>
+    </form>
+    <table border="2">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="todos">
+
+        </tbody>
+    </table>
+    <script>
+        function getTodos() {
+            document.querySelector("#todos").innerHTML = ""
+            fetch("http://localhost:3000/todos")
+                .then(res => res.json())
+                .then(data => {
+                    data.forEach(({ id, status, title }) => {
+                        var ntr = `<tr>
+                                    <td>${id}</td>
+                                    <td>${title}</td>
+                                    <td>${status}</td>
+                                    <td><button onclick="deleteTodo(${id})">Delete</button></td>
+                                </tr>`
+                        document.querySelector("#todos").innerHTML += ntr;
+                    })
+                })
+        }
+        function deleteTodo(id) {
+            fetch(`http://localhost:3000/todos/${id}`, {
+                method: "DELETE"
+            }).then(res => res.json())
+                .then(data => getTodos())
+
+        }
+        function addTodo(e) {
+            e.preventDefault();
+            var ntodo = {
+                title: "",
+                status: ""
+            }
+            ntodo.title = document.getElementById("ntitle").value
+            ntodo.status = document.getElementById("nstatus").value
+            fetch("http://localhost:3000/todos", {
+                method: "POST",
+                headers: {
+                    'Content-Type': "application/json"
+                },
+                body: JSON.stringify(ntodo)
+            }).then(res => res.json())
+                .then(data => {
+                    getTodos()
+                    console.log(data)
+                })
+        }
+        getTodos();
+    </script>
+</body>
+
+</html>

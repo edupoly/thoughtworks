@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="maid-worker.js"></script>
+</head>
+
+<body>
+    <script>
+        console.log("first line");
+        async function addSeries(cb) {
+            var maidWorker = new Worker("maid-worker.js")
+            var r;
+            var x = maidWorker.postMessage(0);
+            console.log(x);
+            // maidWorker.onmessage = (data) => {
+            //     r = data;
+            //     // console.log("data::", data)
+            //     // cb(y.data)
+            //     // resolve(data)
+            // }
+            return r
+        }
+
+
+        addSeries().then(s => console.log("wait chesaka::", s))
+
+        // addSeries(function (data) { console.log("with callback::", data); })
+
+        console.log("last line");
+    </script>
+</body>
+
+</html>

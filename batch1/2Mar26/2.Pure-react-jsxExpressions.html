@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <style>
+        .abc {
+            border: 2px double green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hello HTML 10*20</h1>
+    <div id="root"></div>
+    <script type="text/babel">
+
+        var students = [
+            {
+                fullname: "Konidela Nagarjuna",
+                age: 23,
+                place: "pakistan"
+            },
+            {
+                fullname: "Akkineni Venkatesh",
+                age: 43,
+                place: "North Korea"
+            },
+            {
+                fullname: "Daggubati Chirajeevi",
+                age: 33,
+                place: "Srilanka"
+            },
+        ]
+
+        var slist = <ul>
+            {
+                students.map((s) => {
+                    return (
+                        <li>
+                            <h2>{s.fullname}</h2>
+                            <h3>Age:{s.age}</h3>
+                            <h3>Place:{s.place}</h3>
+                        </li>
+                    )
+                })
+            }
+        </ul>
+
+        ReactDOM.render(slist, document.getElementById("root"))
+
+        // var ob1 = {
+        //     firstname: "Himanshu",
+        //     lastname: "Kari",
+        //     age: 33
+        // }
+        // var jsx1 = <div>
+        //     <h1>{ob1.firstname} {ob1.lastname}</h1>
+        //     <h2>Age: {ob1.age}</h2>
+        // </div>
+        // ReactDOM.render(jsx1, document.getElementById("root"))
+
+
+        // var heroines = ['Madhuri', 'Meenakshi', 'Rekha', 'Sridevi', "bharati", 'smita']
+
+        // var jsxh1 = <h1>Hello JSX {10 * 20}</h1>
+        // ReactDOM.render(jsxh1, document.getElementById("idoroot"))
+
+        // var hlist = <ul>
+        //     {
+        //         heroines.map((heroine) => {
+        //             return <li>{heroine}</li>
+        //         })
+        //     }
+        // </ul>
+        // ReactDOM.render(hlist, document.getElementById("root"))
+    </script>
+</body>
+
+</html>

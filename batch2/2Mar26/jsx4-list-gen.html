@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        .cardgroup {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+        }
+
+        .card {
+            width: 400px;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 20px;
+            color: white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, rgb(234, 118, 79), rgb(155, 83, 29));
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hello Netra 10+20</h1>
+    <div id="root2"></div>
+    <script type="text/babel">
+
+        var mystudents = [
+            {
+                fullname: "Konidela Nagarjuna",
+                age: 23,
+                place: "pakistan"
+            },
+            {
+                fullname: "Akkineni Venkatesh",
+                age: 43,
+                place: "North Korea"
+            },
+            {
+                fullname: "Daggubati Chirajeevi",
+                age: 33,
+                place: "Srilanka"
+            },
+        ]
+        var jsx1 = <ul class="cardgroup">
+            {
+                mystudents.map(function (student) {
+                    return <li class="card">
+                        <h1>{student.fullname}</h1>
+                        <h3>Age:{student.age}</h3>
+                        <h4>Place:{student.place}</h4>
+                    </li>
+                })
+            }
+        </ul>
+        ReactDOM.render(jsx1, document.getElementById("root2"))
+
+    </script>
+</body>
+
+</html>

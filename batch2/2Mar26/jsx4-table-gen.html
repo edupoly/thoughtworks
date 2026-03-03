@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1>Hello Netra 10+20</h1>
+    <div id="root2"></div>
+    <script type="text/babel">
+
+        var mystudents = [
+            {
+                fullname: "Konidela Nagarjuna",
+                age: 23,
+                place: "Pakistan"
+            },
+            {
+                fullname: "Akkineni Venkatesh",
+                age: 43,
+                place: "North Korea"
+            },
+            {
+                fullname: "Daggubati Chirajeevi",
+                age: 33,
+                place: "Srilanka"
+            },
+        ]
+        function sortBy(k) {
+            mystudents.sort((ob1, ob2) => {
+                if (ob1[k] > ob2[k]) {
+                    return 1
+                }
+                else {
+                    return -1
+                }
+            })
+            console.log(mystudents);
+            gentable()
+        }
+        function gentable() {
+            var stable = <table border="2">
+                <thead>
+                    <tr>
+                        <th onClick={() => { sortBy('fullname') }}>Name</th>
+                        <th onClick={() => { sortBy('age') }}>Age</th>
+                        <th onClick={() => { sortBy('place') }}>Place</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        mystudents.map((student) => {
+                            return (<tr>
+                                <td>{student.fullname}</td>
+                                <td>{student.age}</td>
+                                <td>{student.place}</td>
+                            </tr>)
+                        })
+                    }
+                </tbody>
+            </table>
+            ReactDOM.render(stable, document.getElementById("root2"))
+        }
+        gentable()
+    </script>
+</body>
+
+</html>

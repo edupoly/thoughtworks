@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Product Details here</h1>
+
+    <script>
+        var params = new URLSearchParams(window.location.search);
+        var id = params.get("pid");
+        var postDetails = {}
+        console.log(id);
+        var cart = [];
+        function getPostDetails() {
+            document.body.innerHTML = ""
+            fetch(`http://localhost:3000/posts/${id}`)
+                .then(res => res.json())
+                .then(post => {
+
+                    postDetails = post;
+                    var details = `
+                    <img src="${post.thumbnail}">
+                    <h2>${post.title}</h2>
+                    <p>${post.description}</p>
+                    <button onclick="like()">Like (${post.likes})</button>
+                `
+                    document.body.innerHTML += details;
+                })
+        }
+        getPostDetails()
+        function like() {
+            fetch(`http://localhost:3000/posts/${postDetails.id}`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    likes: postDetails.likes + 1
+                })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    getPostDetails()
+                })
+        } 
+    </script>
+</body>
+
+</html>

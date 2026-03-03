@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <style>
+        .abc {
+            border: 2px double green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hello HTML</h1>
+    <div id="edoroot"></div>
+    <div id="idoroot"></div>
+    <script type="text/babel">
+        var nh1 = document.createElement("h1")
+        nh1.innerText = "Hello Javascript"
+        nh1.style.color = "red"
+        nh1.style.backgroundColor = "lightblue"
+        nh1.classList.add("abc")
+        document.body.appendChild(nh1)
+
+        var rh1 = React.createElement("h1", { class: "abc", style: { color: 'blue', backgroundColor: "lightpink" } }, "Hello ReactJS")
+        ReactDOM.render(rh1, document.getElementById("edoroot"))
+
+        var jsxh1 = <h1 style={{ color: "orange", backgroundColor: "lightgreen" }} class="abc">Hello JSX</h1>
+        ReactDOM.render(jsxh1, document.getElementById("idoroot"))
+
+        console.log(React);
+        console.log(ReactDOM);
+    </script>
+</body>
+
+</html>

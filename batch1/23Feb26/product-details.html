@@ -9,6 +9,30 @@
 
 <body>
     <h1>Product Details here</h1>
+
+    <script>
+        var params = new URLSearchParams(window.location.search);
+        var id = params.get("id");
+        console.log(id);
+        var cart = [];
+        fetch(`https://dummyjson.com/products/${id}`)
+            .then(res => res.json())
+            .then(product => {
+                console.log(product);
+                var details = `
+                    <img src="${product.thumbnail}">
+                    <h2>${product.title}</h2>
+                    <p>${product.description}</p>
+                    <h3>Price: ${product.price}</h3>
+                    <button onclick="addToCart(${product.id})">Add to Cart</button>
+                `
+                document.body.innerHTML += details;
+            })
+        function addToCart(p) {
+            cart.push(id)
+            console.log(cart)
+        }
+    </script>
 </body>
 
 </html>
