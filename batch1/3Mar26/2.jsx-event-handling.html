@@ -20,9 +20,12 @@
     <H1>Ekkada unnaru????</H1>
     <div id="idoroot"></div>
     <script type="text/babel">
-
+        function abc(ev, x) {
+            console.log(ev);
+            console.log(x);
+        }
         var jsxh1 = <div>
-            <button>Click Here to Boww...</button>
+            <button onClick={(ev) => { abc(ev, event) }}>Click Here to Boww...</button>
         </div>
         ReactDOM.render(jsxh1, document.getElementById("idoroot"))
 

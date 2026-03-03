@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <style>
+        .abc {
+            border: 2px double green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hello JSX Event Handling</h1>
+    <div id="idoroot"></div>
+    <script type="text/babel">
+        var ntd = ""
+        var todos = ['goto goa', 'play cricket', 'have a break']
+        function addTodo() {
+            todos.push(ntd)
+            console.log(todos);
+            genUI();
+        }
+        function genUI() {
+            var jsxh1 = <div>
+                <input type="text" onKeyUp={(ev) => { ntd = ev.target.value; }} />
+                <button onClick={() => { addTodo() }}>Add Todo</button>
+                <h1 id='d1'></h1>
+                <ul>
+                    {
+                        todos.map((todo) => {
+                            return <li>{todo}</li>
+                        })
+                    }
+                </ul>
+            </div>
+            ReactDOM.render(jsxh1, document.getElementById("idoroot"))
+        }
+        genUI();
+    </script>
+</body>
+
+</html>
