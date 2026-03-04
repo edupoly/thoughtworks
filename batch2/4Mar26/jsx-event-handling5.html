@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+    </style>
+</head>
+
+<body>
+
+    <div id="root2"></div>
+    <script type="text/babel">
+        var deepikas = [
+            {
+                imgUrl: "https://ntvb.tmsimg.com/assets/assets/509523_v9_bb.jpg",
+                likes: 0
+            },
+            {
+                imgUrl: "https://upload.wikimedia.org/wikipedia/commons/d/d3/Deepika_Padukone_2025_%281%29.png",
+                likes: 0
+            },
+            {
+                imgUrl: "https://th-i.thgim.com/public/incoming/ifvdkf/article69668381.ece/alternates/FREE_1200/Actor%20Deepika%20Padukone%208.jpg",
+                likes: 0
+            },
+
+
+        ]
+        var i = 0;
+        function nextImg() {
+            if (i === deepikas.length - 1) {
+                i = -1
+            }
+            i++;
+            genGal();
+        }
+        function like() {
+            deepikas[i].likes++;
+            genGal()
+        }
+        function genGal() {
+            var gallery = <div>
+                <img src={deepikas[i].imgUrl} alt="ajsh" width="200px" />
+                <b>({deepikas[i].likes})</b>
+                <button onClick={() => { like() }}>Like</button>
+                <br />
+                <button onClick={() => { nextImg() }}>Next</button>
+            </div>
+
+            ReactDOM.render(gallery, document.getElementById("root2"))
+        }
+        genGal()
+    </script>
+</body>
+
+</html>

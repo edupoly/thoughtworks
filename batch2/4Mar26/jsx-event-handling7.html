@@ -7,24 +7,20 @@
     <title>Document</title>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <style>
-        .old {
-            background-color: rgb(247, 65, 144);
+        .male {
+            background-color: lightblue;
         }
 
-        .middleage {
-            background-color: rgb(232, 158, 238);
-        }
-
-        .youth {
-            background-color: rgb(140, 229, 239);
+        .female {
+            background-color: lightsalmon;
         }
     </style>
 </head>
 
 <body>
-    <b style="color:red;"><u>Hello JSX Styling</u></b>
+
     <div id="root"></div>
 
     <script type="text/babel">
@@ -48,27 +44,39 @@
             { fullname: "Vijay Deverakonda", gender: "male", age: 34, placeOfBirth: "Achampet", movies: 12 },
             { fullname: "Ravi Teja", gender: "male", age: 56, placeOfBirth: "Jaggampeta", movies: 70 }
         ]
-        function getClass(a) {
-            if (a >= 60) { return 'old' }
-            if (a >= 45 && a < 60) { return 'middleage' }
-            if (a < 45) { return 'youth' }
+        var jsx1 = <div>
+            <input type="text" />
+            <table border="2">
+                <thead>
+                    <tr>
+                        <th>Full Name</th>
+                        <th>Gender</th>
+                        <th>Age</th>
+                        <th>Place of Birth</th>
+                        <th>Count of Movies</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        actors.map((actor) => {
+                            return (
+                                <tr className={actor.gender == "male" ? "male" : 'female'}>
+                                    <td>{actor.fullname}</td>
+                                    <td>{actor.gender}</td>
+                                    <td>{actor.age}</td>
+                                    <td>{actor.placeOfBirth}</td>
+                                    <td>{actor.movies}</td>
+                                    {actor.gender === 'male' && <td>&#x1F468;</td>}
+                                    {actor.gender === 'female' && <td>&#128105;</td>}
 
-
-        }
-        var atable = <table border='2'>
-            <thead>
-                {
-                    actors.map(actor => <tr class={getClass(actor.age)}>
-                        <td>{actor.fullname}</td>
-                        <td>{actor.gender}</td>
-                        <td>{actor.age}</td>
-                        <td>{actor.placeOfBirth}</td>
-
-                    </tr>)
-                }
-            </thead>
-        </table>
-        ReactDOM.render(atable, document.getElementById("root"))
+                                </tr>
+                            )
+                        })
+                    }
+                </tbody>
+            </table>
+        </div>
+        ReactDOM.render(jsx1, document.getElementById("root"))
     </script>
 </body>
 

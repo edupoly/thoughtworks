@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+    </style>
+</head>
+
+<body>
+
+    <div id="root2"></div>
+    <script type="text/babel">
+        var c = 0;
+        function handleIncrement() {
+            c++;
+            console.log(c);
+            genCounter()
+        }
+        function handleDecrement() {
+            c--;
+            genCounter();
+        }
+        function genCounter() {
+            var jsx1 = <div>
+                <h1>Counter:<span id="cnt">{c}</span></h1>
+                <button onClick={() => { handleIncrement() }}>Increment</button>
+                <button onClick={() => { handleDecrement() }}>Decrement</button>
+            </div>
+            ReactDOM.render(jsx1, document.getElementById("root2"))
+        }
+
+        genCounter();
+
+    </script>
+</body>
+
+</html>

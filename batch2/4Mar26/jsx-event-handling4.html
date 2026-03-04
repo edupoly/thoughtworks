@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+    </style>
+</head>
+
+<body>
+
+    <div id="root2"></div>
+    <script type="text/babel">
+        var todos = [
+            "goto goa",
+            "play cricket",
+            "pay bills"
+        ]
+        function addTodo() {
+            var ntd = document.getElementById("ntd").value;
+            todos.push(ntd)
+            genTodolist();
+        }
+        function genTodolist() {
+            var todolist = <div>
+                <input type="text" id='ntd' />
+                <button onClick={() => { addTodo() }}>Add Todo</button>
+                <ul>
+                    {
+                        todos.map((t) => {
+                            return <li>{t}</li>
+                        })
+                    }
+                </ul>
+            </div>
+            ReactDOM.render(todolist, document.getElementById("root2"))
+        }
+        genTodolist();
+    </script>
+</body>
+
+</html>

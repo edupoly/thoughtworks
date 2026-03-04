@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <style>
+        .abc {
+            border: 2px double green;
+        }
+    </style>
+</head>
+
+<body>
+    <b style="color:red;"><u>Hello JSX Styling</u></b>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const users = [
+            { fullname: "John Doe", country: "USA", profession: "Photographer" },
+            { fullname: "Alice Smith", country: "UK", profession: "Chef" },
+            { fullname: "Ravi Kumar", country: "India", profession: "Photographer" },
+            { fullname: "Marie Curie", country: "France", profession: "Photographer" },
+            { fullname: "Hans Zimmer", country: "Germany", profession: "Chef" },
+            { fullname: "Yuki Tanaka", country: "Japan", profession: "Doctor" },
+            { fullname: "Carlos Ruiz", country: "Spain", profession: "Chef" },
+            { fullname: "Elena Petrova", country: "Russia", profession: "Doctor" },
+            { fullname: "Li Wei", country: "China", profession: "Chef" },
+            { fullname: "Sofia Rossi", country: "Italy", profession: "Photographer" }
+        ];
+        var images = [
+            "https://cdn.vectorstock.com/i/1000v/07/23/photographer-avatar-logo-symbol-flat-vector-50220723.jpg",
+            "https://png.pngtree.com/png-clipart/20250425/original/pngtree-3d-male-doctor-character-avatar-png-image_20870250.png",
+            "https://png.pngtree.com/png-clipart/20221207/ourmid/pngtree-chef-avatar-png-image_6514649.png"
+        ]
+        var i = 0;
+        function nextImg() {
+            i++;
+            genUI()
+        }
+        function genUI() {
+            var jsx1 = <div>
+                <img src={images[i]} height="350px" />
+                <br />
+                <button onClick={() => { nextImg() }}>Next</button>
+            </div>
+
+            ReactDOM.render(jsx1, document.getElementById("root"))
+        }
+        genUI()
+        // ReactDOM.render(jsx1, document.getElementById("root"))
+    </script>
+</body>
+
+</html>
