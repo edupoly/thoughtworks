@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <style>
+        .abc {
+            border: 2px double green;
+        }
+    </style>
+</head>
+
+<body>
+    <b style="color:red;"><u>Hello JSX Styling</u></b>
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        var k = +prompt("Enter a number rey")
+        var jsx1 = <h1 style={k % 2 === 0 ? { color: "seagreen" } : { color: "salmon" }}>Hello ReactJS</h1>
+        ReactDOM.render(jsx1, document.getElementById("root"))
+    </script>
+</body>
+
+</html>
