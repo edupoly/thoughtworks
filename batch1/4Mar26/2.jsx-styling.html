@@ -40,8 +40,20 @@
             { fullname: "Vijay Deverakonda", gender: "male", age: 34, placeOfBirth: "Achampet", movies: 12 },
             { fullname: "Ravi Teja", gender: "male", age: 56, placeOfBirth: "Jaggampeta", movies: 70 }
         ]
+        var atable = <table border='2'>
+            <thead>
+                {
+                    actors.map(actor => <tr>
+                        <td>{actor.fullname}</td>
+                        <td>{actor.gender}</td>
+                        <td>{actor.age}</td>
+                        <td>{actor.placeOfBirth}</td>
 
-        ReactDOM.render(jsx1, document.getElementById("root"))
+                    </tr>)
+                }
+            </thead>
+        </table>
+        ReactDOM.render(atable, document.getElementById("root"))
     </script>
 </body>
 
