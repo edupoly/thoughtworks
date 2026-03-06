@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        .male {
+            background-color: lightblue;
+        }
+
+        .female {
+            background-color: lightsalmon;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        function Counter() {
+            var [c, setC] = React.useState(0)
+            function inc() {
+                setC(c + 1)
+                console.log(c);
+            }
+            function dec() {
+                setC(c - 1)
+            }
+            return (
+                <div style={{ border: "2px solid salmon", padding: "10px", margin: "10px" }}>
+                    <h1>Counter:{c}</h1>
+                    <button onClick={() => { inc() }}>Inc</button>
+                    <button onClick={() => { dec() }}>Dec</button>
+                </div>
+            )
+        }
+
+        ReactDOM.render(<div><Counter /><Counter /></div>, document.getElementById("root"))
+    </script>
+</body>
+
+</html>

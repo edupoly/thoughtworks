@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        var deepikas = [
+            "https://ntvb.tmsimg.com/assets/assets/509523_v9_bb.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/d/d3/Deepika_Padukone_2025_%281%29.png",
+            "https://th-i.thgim.com/public/incoming/ifvdkf/article69668381.ece/alternates/FREE_1200/Actor%20Deepika%20Padukone%208.jpg",
+        ]
+        function Gallery() {
+            var [i, setI] = React.useState(0)
+            function nextImg() {
+                setI(i + 1)
+            }
+            return (
+                <div>
+                    <img src={deepikas[i]} style={{ height: "200px" }} alt="" />
+                    <button onClick={() => { nextImg() }}>Next</button>
+                </div>
+            )
+        }
+        ReactDOM.render(<Gallery />, document.getElementById("root"))
+    </script>
+</body>
+
+</html>

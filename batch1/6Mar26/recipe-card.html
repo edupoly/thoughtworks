@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="recipes.js"></script>
+    <style>
+        .recipes {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 150px;
+            border: 1px solid lightblue;
+            border-radius: 10px;
+            text-align: center;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+
+        }
+
+        .card img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Recipe Card</h1>
+    <div id="idoroot"></div>
+    <script type="text/babel">
+        console.log(allRecipes);
+        function RecipeCard(props) {
+            return (
+                <div class="card">
+                    <img src={props.r.image} alt="" />
+                    <b>{props.r.name}</b>
+                    <i>Rating : {props.r.rating}</i>
+                </div>
+            )
+        }
+        function AllRecipes() {
+            return (
+                <div class="recipes">
+                    {
+                        allRecipes.recipes.map((recipe) => {
+                            return <RecipeCard r={recipe} />
+                        })
+                    }
+                </div>
+            )
+        }
+        ReactDOM.render(<div>
+            <AllRecipes />
+        </div>, document.getElementById("idoroot"))
+    </script>
+</body>
+
+</html>

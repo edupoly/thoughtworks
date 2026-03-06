@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <style>
+        .abc {
+            border: 2px double green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Personal Todolist</h1>
+    <h1>Lets understand the Counter</h1>
+    <h1 style="color:red">Edupoly</h1>
+    <div id="idoroot"></div>
+    <script type="text/babel">
+        function Counter({ n, s }) {
+            //state
+
+            var [x, sfn] = React.useState(n);
+
+            //action
+            function inc() {
+                sfn(x + s)
+
+            }
+            function dec() {
+                sfn(x - s)
+            }
+            return (
+                <div style={{ border: '2px solid red', padding: "10px" }}>
+                    <h1>Count:{x}</h1>
+                    <button onClick={() => { inc() }}>Inc</button>
+                    <button onClick={() => { dec() }}>Dec</button>
+                </div>
+            )
+        }
+        ReactDOM.render(<div>
+            <Counter n={10} s={5}></Counter>
+            <Counter n={25} s={10}></Counter>
+            <Counter n={50} s={25}></Counter>
+        </div>, document.getElementById("idoroot"))
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <style>
+        .abc {
+            border: 2px double green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Personal Todolist</h1>
+    <div id="idoroot"></div>
+    <script type="text/babel">
+        var s = <div style={{ border: '2px solid red' }}>
+            <h1>Hello Praveen</h1>
+            <h1>How are you doing</h1>
+            <h2>Sarle ok</h2>
+        </div>
+
+
+        function Jsx1() {
+            return (<div style={{ border: "2px solid", margin: "10px" }}>
+                <h4>Hello Praveen</h4>
+                <h4>How are you doing</h4>
+                <h5>Sarle ok</h5>
+            </div>)
+        }
+
+        var maindiv = <div>
+            <Jsx1></Jsx1>
+            <Jsx1></Jsx1>
+            <Jsx1></Jsx1>
+        </div>
+        ReactDOM.render(maindiv, document.getElementById("idoroot"))
+    </script>
+</body>
+
+</html>
